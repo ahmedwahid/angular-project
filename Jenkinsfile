@@ -1,7 +1,7 @@
-pipeline {
+pipeline{
     agent any
 
-     environment {
+     environment{
        # // Set the path to your local Node.js installation
        # NODEJS_HOME = 'C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Node.js'
        # // Add Node.js and npm to the PATH
@@ -10,16 +10,15 @@ pipeline {
      }
 
 
-    stages {
-        stage('Checkout SCM') {
-            steps {
+    stages{
+        stage('Checkout SCM'){
+            steps{
                 checkout scm
             }
         }
-
-        stage('Build, Login, Push') {
-            steps {
-                script {
+        stage('Build, Login, Push'){
+            steps{
+                steps{
                     // Build the Docker image using the builder stage
                     sh 'docker build -t ahmedwahid/angular-image .'
 
