@@ -1,12 +1,14 @@
 pipeline {
     agent any
 
-   # environment {
+     environment {
        # // Set the path to your local Node.js installation
        # NODEJS_HOME = 'C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Node.js'
        # // Add Node.js and npm to the PATH
        # PATH = "${NODEJS_HOME};${env.PATH}"
-   # }
+       DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+     }
+
 
     stages {
         stage('Checkout SCM') {
